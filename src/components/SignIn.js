@@ -14,7 +14,7 @@ function SignIn() {
         // APi Call
         setIsLoading(true);
         let res = await API.signIn();
-        if (res && res.statusCode && Number(res.statusCode) === 200) {
+        if (res && res.statusCode && Number(res.statusCode) === 200 && res.token) {
             setAuthToken(res.token);
             setIsLoading(false);
             setIsSignedIn(true);
